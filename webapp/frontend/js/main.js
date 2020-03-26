@@ -101,6 +101,65 @@ const plotPPMD3Js = (data) => {
       )
 };
 
+const plotPPMHighcharts = (data) => {
+  let avgPpms = data.averageYearlyPpms.map(Number);
+  Highcharts.chart('highcharts', {
+
+    title: {
+      text: 'Visualization of CO2 PPM from 1958-2018'
+    },
+
+    yAxis: {
+      title: {
+        text: 'PPM'
+      }
+    },
+
+    xAxis: {
+      title: {
+        text: 'Years'
+      }
+    },
+
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+      series: {
+        allowPointSelect: true,
+        label: {
+          connectorAllowed: false
+        },
+        pointStart: data.years[0]
+
+      }
+    },
+
+    series: [{
+      data: avgPpms
+    }],
+
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
+
+  });
+};
+
 socket.onopen = () => {
   socket.onmessage = (event) => {
     const message = event.data;
@@ -110,6 +169,7 @@ socket.onopen = () => {
     if (parseData.name === "CalcCO2Stats") {
       plotPPMChartJs(parseData.data);
       plotPPMD3Js(parseData.data);
+      plotPPMHighcharts(parseData.data);
     } else if (parseData.name === "CurrentCO2Stats") {
       document.getElementById("currentCO2Ppm").innerText = parseData.data;
     }
