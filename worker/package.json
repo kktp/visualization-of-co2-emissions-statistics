@@ -1,0 +1,16 @@
+{
+  "name": "visualization-of-api-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rmqConsumer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node rmqConsumer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "node-fetch": "^2.6.0"
+  }
+}

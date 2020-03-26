@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Climate Visualization</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css"-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" defer></script>
+    <script src="https://d3js.org/d3.v5.min.js" defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="grid_layout">
+    <section class="grid_title">
+        <h1>
+            Visualization of Climate Data
+        </h1>
+        <p>
+            Statistics about CO2 emissions in parts per million. <br>
+            The largest source of CO2 emissions from human activities is <br>
+            from burning fossil fuels for electricity, heat, and transportation.
+        </p>
+        <div id="current_data">
+            <h2>Current data</h2>
+            <div id="currentCO2Ppm"></div>
+        </div>
+
+    </section>
+    <div class="grid_content">
+        <h2>CO2 PPM</h2>
+        <div style="max-width: 800px; max-height: 800px">
+            <canvas id="chartjs"></canvas>
+        </div>
+    </div>
+    <div id="my_dataviz"></div>
+
+</div>
+
+
+</body>
+</html>
