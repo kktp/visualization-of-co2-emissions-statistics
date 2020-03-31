@@ -1,0 +1,17 @@
+#charts {
+    max-width: 800px;
+    max-height: 800px;
+    margin: auto;
+}
+
+#charts #anycharts-container {
+    height: 300px;
+}
+
+h1, h2, h3 {
+    color: #4c4c4c;
+}
+
+h2 {
+    margin: auto;
+}

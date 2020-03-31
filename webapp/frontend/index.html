@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Climate Visualization</title>
-    <!--<link rel="stylesheet" type="text/css" href="css/style.css"-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" defer></script>
     <script src="https://d3js.org/d3.v5.min.js" defer></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -12,8 +12,8 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
-<div class="grid_layout">
-    <section class="grid_title">
+<div>
+    <section>
         <h1>
             Visualization of Climate Data
         </h1>
@@ -24,21 +24,28 @@
         </p>
         <div id="current_data">
             <h2>Current data</h2>
+            <br>
             <div id="currentCO2Ppm"></div>
         </div>
 
     </section>
-    <div class="grid_content">
-        <h2>CO2 PPM</h2>
-        <div style="max-width: 800px; max-height: 800px">
+    <br>
+
+    <h2>Visualization of CO2 PPM from 1958-2018</h2>
+    <div id="charts">
+        <h3>ChartJS</h3>
+        <div class="chart-js">
             <canvas id="chartjs"></canvas>
         </div>
-    </div>
-    <div id="my_dataviz" style="max-width: 800px; max-height: 800px"></div>
-    <div id="highcharts" style="max-width: 800px; max-height: 800px"></div>
-    <div id="chart_div" style="max-width: 800px; max-height: 800px"></div>
-
-
+        <h3>D3JS</h3>
+        <div id="my_dataviz"></div>
+        <h3>Highcharts</h3>
+        <div id="highcharts"></div>
+        <h3>Google Charts</h3>
+        <div id="chart_div"></div>
+        <h3>Anychart</h3>
+        <div id="anycharts-container"></div>
+        </div>
 </div>
 
 
